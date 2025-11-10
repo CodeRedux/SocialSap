@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV1S38R40N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-NV1S38R40N');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Download youtube thumbnail Images and vimeo videos of all quality. This app lets you to download HD thumbnail images for free. Just enter the URL of the video for which thumbnail needs to be saved.">
+
+  <title>
+    No Login or Signup! Free HD Youtube Thumbnail Image Downloader
+  </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/icon.png">
+
+
+
+</head>
+
+
+<body>
+  <nav class="nav">
+    <div class="nav-container" style="width: 100%;max-width:100%;padding-left:20px;">
+      <a href="/">
+        <h2 class="nav-title">SocialSap </h2>
+      </a>
+
+    </div>
+  </nav>
+
+
+
+  <main>
+
+
+
+    <div class='bodyContainer'>
+      <h2 class="heading-title" style="text-align: center;    font-style: italic;">HD Youtube Thumbnail Downloader</h2>
+
+      <div class='adContainer lg-ad' style='margin-top:5px;height:75px;text-align:center;'>
+
+
+
+
+
+
+      </div>
+      <header style="margin-top: -30px;">
+        <p
+          style='text-align: center;margin:0 auto;max-width: 500px;padding-top: 30px;padding-bottom: 30px;font-size: 16px;margin-top:50px;'>
+          No Login or Signup! Download every YouTube thumbnail image quality for free. This tool provides you with access to
+          download all available resolutions and sizes. Simply paste the video's URL into the input field below and
+          click "Get Thumbnail Image" to begin </h1>
+      </header>
+
+      <div class='container'>
+        <form class='downloadForm' onsubmit="event.preventDefault();DownloadLinks();">
+          <input aria-label='input URL ' class='form-control col-lg-6' id='inputURL'
+            placeholder='Enter the youtube URL here' type='url' name='url' />
+          <button class='btn btn-default' id='submitButton' type='button'>Get Thumbnail</button>
+
+        </form>
+        <div style="width:100%;">
+        </div>
+        <div id="imgListing" class='imgListing' style="width:100%;left:0px">
+          <div id='topListing' style="display: none">
+            <h5 class="right-click-info">Right Click and click on 'Save Image As..' to save the images.</h5>
+            <h5 id='hdrestext'>HD Thumbnail Image (1280x720)</h5>
+            <a id="hdreslink" href="https://img.youtube.com/vi/-B1eYQRapQA/maxresdefault.jpg" class="download-btn" download>Download HD Thumbnail Image</a>
+            <img id='maxres' src="" loading="eager">
+            <h5 id='sdrestext'>SD Thumbnail Image (640x480)</h5>
+            <a id="sdreslink" class="download-btn">Download SD Thumbnail Image</a>
+            <img id='sdres' src="" loading="auto">
+          </div>
+
+          <div id='bottomListing' style="display: none">
+            <h5 id='normalrestext'>Normal Thumbnail Image (480x360)</h5>
+            <a id="hqreslink" class="download-btn">Download Normal Thumbnail Image(480x360)</a>
+            <img id='hqres' src="" loading="lazy">
+            <div id='extraYTImg'>
+              <h5>Normal Image (320x180)</h5>
+              <a id="mqreslink" class="download-btn">Download Normal Thumbnail Image(320x180)</a>
+              <img id='mqres' src="" loading="lazy">
+
+              <h5>Normal Image (120x90)</h5>
+              <a id="defreslink" class="download-btn">Download Normal Thumbnail Image(120x90)</a>
+              <img id='defres' src="" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <div class='row container-fluid ' id="extension-container" style="margin-top:50px">
+          <div class='card text-center'>
+            <div class='card-body'>
+              <h4 class='card-title'>Extensions</h4>
+              <p class='card-text'>Get Firefox extension to hassle free experience of downloading thumbnails</p>
+
+              <a class='btn btn-outline-success' href='https://j.mp/3stFug0' target="_blank" rel='noreferrer'
+                style="display:inline"><img src="./images/1/firefox.png" alt='Firefox Extension link'
+                  style="display:inline-block">Firefox addon</a>
+              </img>
+
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <script type="text/javascript" src="js/ytg3.js">
+    </script>
+    <script>
+      initFunction();
+      if (window.matchMedia('(max-width: 750px)').matches) {
+        var width = window.innerWidth - 50;
+        width = width > 200 ? width : 200;
+        document.getElementsByTagName("ins")[0].style.width = width;
+      }
+    </script>
+    <style>
+      .download-btn {
+        cursor: pointer;
+      }
+    </style>
+
+
+
+
+
+
+
+  </main>
+
+
+  <footer>
+    <span>
+
+    </span>
+  </footer>
+
+
+</body>
+
+
+</html>
