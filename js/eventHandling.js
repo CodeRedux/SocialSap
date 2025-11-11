@@ -160,10 +160,19 @@ if (window.matchMedia('(max-width: 750px)').matches) {
         $("#normalrestext").text("Normal Image (480x360)");
 
         $("#maxres").attr("src", "https://img.youtube.com/vi/" + result + "/maxresdefault.jpg");
+        $("#hdreslink").attr("href", "https://img.youtube.com/vi/" + result + "/maxresdefault.jpg");
+        
         $("#sdres").attr("src", "https://img.youtube.com/vi/" + result + "/sddefault.jpg");
+        $("#sdreslink").attr("href", "https://img.youtube.com/vi/" + result + "/sddefault.jpg");
+
         $("#hqres").attr("src", "https://i3.ytimg.com/vi/" + result + "/hqdefault.jpg");
+        $("#hqreslink").attr("href", "https://i3.ytimg.com/vi/" + result + "/hqdefault.jpg");
+
         $("#mqres").attr("src", "https://img.youtube.com/vi/" + result + "/mqdefault.jpg");
+        $("#mqreslink").attr("href", "https://img.youtube.com/vi/" + result + "/mqdefault.jpg");
+        
         $("#defres").attr("src", "https://img.youtube.com/vi/" + result + "/default.jpg");
+$("#defreslink").attr("href", "https://img.youtube.com/vi/" + result + "/default.jpg");
 
         isMaxResAvailable(result);
         $("#extraYTImg").show();
