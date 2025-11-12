@@ -12,7 +12,7 @@
 
     gtag('config', 'G-NV1S38R40N');
   </script>
-
+<link rel="icon" href="/favicon.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
@@ -39,6 +39,29 @@
 
 
 <body>
+<script>
+  function downloadThumbnail(url) {
+      // Fetch the image as a Blob
+      fetch(url)
+        .then(response => response.blob())
+        .then(blob => {
+          // Create an anchor element
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob); // Create a URL for the blob
+          link.download = 'youtube_thumbnail.jpg'; // Set the filename for download
+          
+          // Trigger the download
+          link.click();
+
+          // Clean up
+          URL.revokeObjectURL(link.href);
+        })
+        .catch(error => {
+          console.error('Download failed:', error);
+        });
+    }
+</script>
+
   <nav class="nav">
     <div class="nav-container" style="width: 100%;max-width:100%;padding-left:20px;">
       <a href="/">
@@ -70,7 +93,7 @@
           style='text-align: center;margin:0 auto;max-width: 500px;padding-top: 30px;padding-bottom: 30px;font-size: 16px;margin-top:50px;'>
           No Login or Signup! Download every YouTube thumbnail image quality for free. This tool provides you with access to
           download all available resolutions and sizes. Simply paste the video's URL into the input field below and
-          click "Get Thumbnail Image" to begin </h1>
+          click "Get Thumbnail" to begin </h1>
       </header>
 
       <div class='container'>

@@ -160,19 +160,19 @@ if (window.matchMedia('(max-width: 750px)').matches) {
         $("#normalrestext").text("Normal Image (480x360)");
 
         $("#maxres").attr("src", "https://img.youtube.com/vi/" + result + "/maxresdefault.jpg");
-        $("#hdreslink").attr("href", "https://img.youtube.com/vi/" + result + "/maxresdefault.jpg");
+        $("#hdreslink").attr("onclick", "downloadThumbnail('https://img.youtube.com/vi/" + result + "/maxresdefault.jpg')");
         
         $("#sdres").attr("src", "https://img.youtube.com/vi/" + result + "/sddefault.jpg");
-        $("#sdreslink").attr("href", "https://img.youtube.com/vi/" + result + "/sddefault.jpg");
+        $("#sdreslink").attr("onclick", "downloadThumbnail('https://img.youtube.com/vi/" + result + "/sddefault.jpg')");
 
         $("#hqres").attr("src", "https://i3.ytimg.com/vi/" + result + "/hqdefault.jpg");
-        $("#hqreslink").attr("href", "https://i3.ytimg.com/vi/" + result + "/hqdefault.jpg");
+        $("#hqreslink").attr("onclick", "downloadThumbnail('https://img.youtube.com/vi/" + result + "/hqdefault.jpg')");
 
         $("#mqres").attr("src", "https://img.youtube.com/vi/" + result + "/mqdefault.jpg");
-        $("#mqreslink").attr("href", "https://img.youtube.com/vi/" + result + "/mqdefault.jpg");
+        $("#mqreslink").attr("onclick", "downloadThumbnail('https://img.youtube.com/vi/" + result + "/mqdefault.jpg')");
         
         $("#defres").attr("src", "https://img.youtube.com/vi/" + result + "/default.jpg");
-$("#defreslink").attr("href", "https://img.youtube.com/vi/" + result + "/default.jpg");
+$("#defreslink").attr("onclick", "downloadThumbnail('https://img.youtube.com/vi/" + result + "/default.jpg')");
 
         isMaxResAvailable(result);
         $("#extraYTImg").show();
@@ -187,6 +187,30 @@ $("#defreslink").attr("href", "https://img.youtube.com/vi/" + result + "/default
         alert("Please check the URL you have entered");
         return 0;
     }
+function downloadThumbnail(url) {
+    $.ajax({
+        url: url,
+        method: 'GET',
+        xhrFields: { responseType: 'blob' },
+        success: function(blob) {
+            $('<a>', {
+                href: URL.createObjectURL(blob),
+                download: 'youtube_thumbnail.jpg',
+                css: { display: 'none' }
+            })
+            .appendTo('body')
+            .get(0).click(); // Use .get(0) to get native element for click
+
+            // Cleanup after a short delay
+            setTimeout(function() {
+                URL.revokeObjectURL(blob);
+            }, 100);
+        },
+        error: function() {
+            console.error('Download failed');
+        }
+    });
+}
 
     // Initialize
     initFunction();
